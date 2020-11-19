@@ -15,6 +15,8 @@
 		9D6885B9256722EC004FBF62 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6885B8256722EC004FBF62 /* DiscoverView.swift */; };
 		9D6885BC2567238C004FBF62 /* PastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6885BB2567238C004FBF62 /* PastView.swift */; };
 		9D6885BF25672770004FBF62 /* CreateHypedEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6885BE25672770004FBF62 /* CreateHypedEventView.swift */; };
+		9D6885C22567287C004FBF62 /* HypedEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6885C12567287C004FBF62 /* HypedEvent.swift */; };
+		9D6885C5256731A5004FBF62 /* FormLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6885C4256731A5004FBF62 /* FormLabelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		9D6885B8256722EC004FBF62 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
 		9D6885BB2567238C004FBF62 /* PastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastView.swift; sourceTree = "<group>"; };
 		9D6885BE25672770004FBF62 /* CreateHypedEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHypedEventView.swift; sourceTree = "<group>"; };
+		9D6885C12567287C004FBF62 /* HypedEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypedEvent.swift; sourceTree = "<group>"; };
+		9D6885C4256731A5004FBF62 /* FormLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLabelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				9D6885A225671CD1004FBF62 /* HypedListApp.swift */,
 				9D6885B425671F24004FBF62 /* UpcomingView.swift */,
 				9D6885BE25672770004FBF62 /* CreateHypedEventView.swift */,
+				9D6885C4256731A5004FBF62 /* FormLabelView.swift */,
+				9D6885C12567287C004FBF62 /* HypedEvent.swift */,
 				9D6885B8256722EC004FBF62 /* DiscoverView.swift */,
 				9D6885A425671CD1004FBF62 /* HypedListTabView.swift */,
 				9D6885BB2567238C004FBF62 /* PastView.swift */,
@@ -154,6 +160,8 @@
 				9D6885A325671CD1004FBF62 /* HypedListApp.swift in Sources */,
 				9D6885BF25672770004FBF62 /* CreateHypedEventView.swift in Sources */,
 				9D6885B525671F24004FBF62 /* UpcomingView.swift in Sources */,
+				9D6885C22567287C004FBF62 /* HypedEvent.swift in Sources */,
+				9D6885C5256731A5004FBF62 /* FormLabelView.swift in Sources */,
 				9D6885B9256722EC004FBF62 /* DiscoverView.swift in Sources */,
 				9D6885BC2567238C004FBF62 /* PastView.swift in Sources */,
 			);
