@@ -11,44 +11,77 @@ struct CreateHypedEventView: View {
     
     //Use StateObject when dealing with data from Classes
     @StateObject var hypedEvent = HypedEvent()
+    @State var showTime = false
+    @State var showImagePicker = false
     
     var body: some View {
         Form {
             Section {
-                FormLabelView(title: "Title", color: .blue, icon: "keyboard")
-                    
-//                Label {
-//                    Text("Title")
-//                } icon: {
-//                    Image(systemName: "keyboard")
-//                        .padding(4)
-//                        .background(Color.blue)
-//                        .cornerRadius(7)
-//                        .foregroundColor(.white)
-//                }
+                FormLabelView(title: "Title", color: .green, icon: "keyboard")
                 TextField("Title", text: $hypedEvent.title)
                     .autocapitalization(.words) //allows keyboard to auto cap each word
             }
             Section {
-                Label {
-                    Text("Date")
-                } icon: {
-                    Image(systemName: "calendar")
-                        .padding(4)
-                        .background(Color.red)
-                        .cornerRadius(7)
-                        .foregroundColor(.white)
-                }
-                DatePicker("Date", selection: $hypedEvent.date, displayedComponents: [.date, .hourAndMinute])
+                FormLabelView(title: "Date", color: .blue, icon: "calendar")
+                DatePicker("Date", selection: $hypedEvent.date, displayedComponents: showTime ? [.date, .hourAndMinute] : [.date])
                     .datePickerStyle(GraphicalDatePickerStyle())
+                Toggle(isOn: $showTime) {
+                    FormLabelView(title: "Time", color: .blue, icon: "clock.fill")
+                }
+            }
+      
+            Section {
+                if hypedEvent.image() == nil {
+                    HStack {
+                        FormLabelView(title: "Image", color: .purple, icon: "camera")
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            showImagePicker = true
+                        }) {
+                            Text("Pick Image")
+                        }
+                        
+                    }
+                } else {
+                    HStack {
+                        FormLabelView(title: "Image", color: .purple, icon: "camera")
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            hypedEvent.imageData = nil
+                        }) {
+                            Text("Remove Image")
+                                .foregroundColor(.red)
+                        }
+                        .buttonStyle(BorderlessButtonStyle())
+                    }
+                    Button(action: {
+                        showImagePicker = true
+                    }) {
+                        hypedEvent.image()!
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }
+                    .buttonStyle(BorderlessButtonStyle())
+                }
+                
+            }
+            .sheet(isPresented: $showImagePicker) {
+                ImagePicker(imageData: $hypedEvent.imageData)
+            }
+          
+            Section {
+                ColorPicker(selection: $hypedEvent.color) {
+                    FormLabelView(title: "Color Picker", color: .yellow, icon: "eyedropper")
+                }
             }
             
             Section {
-                ColorPicker("Color", selection: $hypedEvent.color)
-            }
-            
-            Section {
-                TextField("Website", text: $hypedEvent.url)
+                FormLabelView(title: "URL", color: .orange, icon: "link")
+                TextField("www.google.com", text: $hypedEvent.url)
                     .keyboardType(.URL)
                     .autocapitalization(.none)
             }
